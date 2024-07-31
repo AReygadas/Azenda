@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Mi API Express"
+paths:
+  "/api/users":
+    get:
+      summary: "Obtener todos los usuarios"
+      responses:
+        200:
+          description: "Lista de usuarios"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    components:
+      schemas:
+        User:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
