@@ -39,8 +39,8 @@ class UserService {
     console.log(data)
     const newUser = await models.User.create(data);
     return newUser;
-  }Informat
-
+  }
+  
   async find() {
     const rta = await models.User.findAll();
     return rta;
