@@ -6,7 +6,7 @@ const { Hotel, HotelSchema } = require('./hotel');
 const { IndustrialBuilding, IndustrialBuildingSchema } = require('./IndustrialBuilding');
 const { Office, OfficeSchema } = require('./Office');
 const { Warehouse, WarehouseSchema } = require('./Warehouse');
-
+const {Addresses, AddressesSchema} = require('./Addresses');
 
 function setupModels(sequelize) {
   User.init(UserSchema, User.config(sequelize));
@@ -17,6 +17,7 @@ function setupModels(sequelize) {
   Hotel.init(HotelSchema, Hotel.config(sequelize));
   IndustrialBuilding.init(IndustrialBuildingSchema, IndustrialBuilding.config(sequelize));
   Warehouse.init(WarehouseSchema, Warehouse.config(sequelize));
+  Addresses.init(AddressesSchema,Addresses.config(sequelize));
 }
 
 module.exports = setupModels;
