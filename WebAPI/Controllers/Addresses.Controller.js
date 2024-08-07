@@ -1,9 +1,20 @@
 const express = require('express');
 
 const AddressService = require('./../Services/AddressesService');
-
+const multer = require('multer');
 const router = express.Router();
+const upload = multer({ dest: 'uploads/' });
 const service = new AddressService();
+
+router.post('/upload-excel', upload.single('file'), async (req, res, next) => {
+    try {
+      const filePath = req.file.path;
+      const result = await service.uploadExcel(filePath);
+      res.status(201).json(result);
+    } catch (error) {
+      next(error);
+    }
+  });
 
 router.get('/', async (req, res, next) => {
   try {

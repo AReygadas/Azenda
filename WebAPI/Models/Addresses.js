@@ -11,7 +11,6 @@ const AddressesSchema = {
   postalCode: {
     allowNull: false, 
     type: DataTypes.STRING,
-    unique: true,
     field: 'postal_code'
   },
   nameSettlement: {
